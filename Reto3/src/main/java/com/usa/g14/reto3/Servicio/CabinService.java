@@ -71,5 +71,15 @@ public class CabinService {
 
     }
 
-    
+    public boolean delete(int id){
+                boolean flag=false;
+                Optional<Cabin> p =CabinRepositorio.getCabin(id);
+                if(p.isPresent()){
+                    CabinRepositorio.delete(p.get());
+                    flag=true;
+                }
+                return flag;
+    }
+
+
 }
